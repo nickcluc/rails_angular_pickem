@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
+gem 'coveralls', require: false
 
 group :development, :test do
   gem 'pry-rails'
