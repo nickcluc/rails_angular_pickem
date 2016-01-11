@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.3.0"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -11,11 +11,8 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
-  gem 'debugger'
+  gem 'pry-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails'
