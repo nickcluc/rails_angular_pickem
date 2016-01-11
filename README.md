@@ -1,3 +1,5 @@
+#Football Pickem Pools with Rails & AngularJS
+
 Steps to set up:
 
 - Clone app
