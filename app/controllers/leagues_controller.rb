@@ -1,48 +1,29 @@
 class LeaguesController < ApplicationController
   before_action :set_league, only: [:show, :edit, :update, :destroy]
 
-  # GET /leagues
   def index
-    @leagues = League.all
+    respond_with League.all
   end
 
-  # GET /leagues/1
   def show
+    respond_with League.find(params[:id])
   end
 
-  # GET /leagues/new
-  def new
-    @league = League.new
-  end
-
-  # GET /leagues/1/edit
-  def edit
-  end
 
   # POST /leagues
   def create
-    @league = League.new(league_params)
-
-    if @league.save
-      redirect_to @league, notice: 'League was successfully created.'
-    else
-      render :new
-    end
+    respond_with League.create(league_params)
   end
 
   # PATCH/PUT /leagues/1
   def update
-    if @league.update(league_params)
-      redirect_to @league, notice: 'League was successfully updated.'
-    else
-      render :edit
-    end
+    respond_with League.update(league_params)
   end
 
   # DELETE /leagues/1
   def destroy
-    @league.destroy
-    redirect_to leagues_url, notice: 'League was successfully destroyed.'
+    league = League.find(params[:id])
+    respond_with league.destroy
   end
 
   private
@@ -53,6 +34,6 @@ class LeaguesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def league_params
-      params[:league]
+      params.require[:league].permit(:name, :description)
     end
 end

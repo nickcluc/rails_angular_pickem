@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
 gem 'coveralls', require: false
+gem 'responders', '~> 2.0'
+gem 'angular-rails-templates'
+gem 'sprockets', '2.12.3'
 
 group :development, :test do
   gem 'pry-rails'
